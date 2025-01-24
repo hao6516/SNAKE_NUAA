@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="lantern left"></div>
+    <div class="lantern right"></div>
+    <div class="game-container">
+        <h1 class="title">金龙贪食 - 2025蛇年特别版</h1>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls">
+            <div class="score-container">
+                <div class="score">分数: <span id="scoreValue">0</span></div>
+                <div class="high-score">最高分: <span id="highScoreValue">0</span></div>
+            </div>
+            <select id="difficulty">
+                <option value="200">简单</option>
+                <option value="150">中等</option>
+                <option value="100">困难</option>
+            </select>
+            <div class="buttons">
+                <button id="startButton">开始游戏</button>
+                <button id="pauseButton">暂停</button>
+            </div>
+        </div>
+    </div>
+    <div id="touchControls" class="touch-controls">
+        <button id="upButton">↑</button>
+        <div class="horizontal-controls">
+            <button id="leftButton">←</button>
+            <button id="rightButton">→</button>
+        </div>
+        <button id="downButton">↓</button>
+    </div>
+    <audio id="eatSound" src="eat.mp3"></audio>
+    <audio id="gameOverSound" src="gameover.mp3"></audio>
+    <script src="game.js"></script>
+</body>
+</html> 
