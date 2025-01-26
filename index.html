@@ -19,13 +19,23 @@
                 <div class="high-score">最高分: <span id="highScoreValue">0</span></div>
             </div>
             <select id="difficulty">
-                <option value="200">简单</option>
-                <option value="150">中等</option>
+                <option value="400">简单</option>
+                <option value="300">中等</option>
                 <option value="100">困难</option>
             </select>
-            <div class="buttons">
-                <button id="startButton">开始游戏</button>
-                <button id="pauseButton">暂停</button>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="buttons">
+                    <button id="startButton">开始</button>
+                    <button id="pauseButton">暂停</button>
+                </div>
+                <div class="button-control">
+                    <button id="upButton" style="margin-left: 80px;">↑</button>
+                    <div class="horizontal-controls" style="display: flex;">
+                        <button id="leftButton">←</button>
+                        <button id="rightButton">→</button>
+                    </div>
+                    <button id="downButton" style="margin-left: 80px;">↓</button>
+                </div>
             </div>
         </div>
     </div>

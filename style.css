@@ -135,8 +135,8 @@ select {
 
 .horizontal-controls {
     display: flex;
-    gap: 50px;
-    margin: 10px 0;
+    gap: 80px;
+    /* margin: 10px 0; */
 }
 
 .touch-controls button {
@@ -177,3 +177,23 @@ select {
 .game-container::after {
     right: 20px;
 } 
+.button-control {
+    position: relative;
+}
+
+.button-control button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+#startButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+#pauseButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
