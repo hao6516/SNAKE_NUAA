@@ -20,7 +20,7 @@ class SnakeGame {
         };
 
         // 设置图片的源地址
-        img.src = 'a1.png'; //
+        img.src = './a1.png'; //
         this.canvas.width = 380;
         this.canvas.height = 380;
         this.gridSize = 20;
@@ -261,28 +261,34 @@ class SnakeGame {
     }
 
     drawSnakeEyes(head) {
-        const eyeSize = 4;
+        const eyeSize = 20;
         const eyeOffset = 5;
-        this.ctx.fillStyle = '#000';
-        
-        switch(this.direction) {
-            case 'right':
-                this.ctx.fillRect(head.x * this.gridSize + 12, head.y * this.gridSize + eyeOffset, eyeSize, eyeSize);
-                this.ctx.fillRect(head.x * this.gridSize + 12, head.y * this.gridSize + this.gridSize - eyeOffset - eyeSize, eyeSize, eyeSize);
-                break;
-            case 'left':
-                this.ctx.fillRect(head.x * this.gridSize + 4, head.y * this.gridSize + eyeOffset, eyeSize, eyeSize);
-                this.ctx.fillRect(head.x * this.gridSize + 4, head.y * this.gridSize + this.gridSize - eyeOffset - eyeSize, eyeSize, eyeSize);
-                break;
-            case 'up':
-                this.ctx.fillRect(head.x * this.gridSize + eyeOffset, head.y * this.gridSize + 4, eyeSize, eyeSize);
-                this.ctx.fillRect(head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 4, eyeSize, eyeSize);
-                break;
-            case 'down':
-                this.ctx.fillRect(head.x * this.gridSize + eyeOffset, head.y * this.gridSize + 12, eyeSize, eyeSize);
-                this.ctx.fillRect(head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 12, eyeSize, eyeSize);
-                break;
-        }
+        const eyeImage = new Image(); // 创建一个图片对象
+    
+        // 图片加载完成后绘制
+        eyeImage.onload = () => {
+            switch(this.direction) {
+                case 'right':
+                    this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
+                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize + this.gridSize, eyeSize, eyeSize);
+                    break;
+                case 'left':
+                    this.ctx.drawImage(eyeImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
+                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + 4, head.y * this.gridSize + this.gridSize - eyeOffset - eyeSize, eyeSize, eyeSize);
+                    break;
+                case 'up':
+                    this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
+                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 4, eyeSize, eyeSize);
+                    break;
+                case 'down':
+                    this.ctx.drawImage(eyeImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
+                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 12, eyeSize, eyeSize);
+                    break;
+            }
+        };
+    
+        // 设置图片的源地址
+        eyeImage.src = './a3.png'; // 替换为你的图片路径
     }
 
     drawFood() {
