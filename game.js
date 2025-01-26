@@ -7,8 +7,8 @@ class SnakeGame {
         
         this.canvas = document.getElementById('gameCanvas');
         this.ctx = this.canvas.getContext('2d');
-        this.canvas.width = 400;
-        this.canvas.height = 400;
+        this.canvas.width = 380;
+        this.canvas.height = 380;
         this.gridSize = 20;
         this.snake = [];
         this.food = {};
@@ -105,7 +105,7 @@ class SnakeGame {
         
         if (this.gameLoop) clearInterval(this.gameLoop);
         this.gameLoop = setInterval(() => this.gameStep(), this.gameSpeed);
-        this.startButton.textContent = '重新开始';
+        this.startButton.textContent = '重置';
         this.gameSpeed = 400;
         this.isPaused = false;
         this.pauseButton.textContent = '暂停';
@@ -199,7 +199,7 @@ class SnakeGame {
         }
         
         alert(`游戏结束！得分：${this.score}`);
-        this.startButton.textContent = '开始游戏';
+        this.startButton.textContent = '开始';
         this.pauseButton.textContent = '暂停';
     }
 

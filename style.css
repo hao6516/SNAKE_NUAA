@@ -138,7 +138,7 @@ select {
 
 .horizontal-controls {
     display: flex;
-    gap: 80px;
+    gap: 70px;
     /* margin: 10px 0; */
 }
 
@@ -186,22 +186,23 @@ select {
 }
 
 .button-control button {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: #01344F;
 }
 
 #startButton {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     color: black;
     background-color: #9f4125;
+    font-size: 16px;
 }
 #pauseButton {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     color: white;
     background-color: #382020;
