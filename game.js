@@ -7,6 +7,20 @@ class SnakeGame {
         
         this.canvas = document.getElementById('gameCanvas');
         this.ctx = this.canvas.getContext('2d');
+        const img = new Image();
+
+        // 图片加载完成后，将其绘制到canvas上
+        img.onload = function() {
+            // 计算图片放置的中心位置
+            const x = (this.canvas.width - img.width) / 2;
+            const y = (this.canvas.height - img.height) / 2;
+
+            // 在canvas上绘制图片
+            ctx.drawImage(img, x, y);
+        };
+
+        // 设置图片的源地址
+        img.src = 'a1.png'; //
         this.canvas.width = 380;
         this.canvas.height = 380;
         this.gridSize = 20;
@@ -15,7 +29,7 @@ class SnakeGame {
         this.direction = 'right';
         this.score = 0;
         this.gameLoop = null;
-        this.gameSpeed = 200;
+        this.gameSpeed = 400;
 
         this.startButton = document.getElementById('startButton');
         this.scoreElement = document.getElementById('scoreValue');
