@@ -10,7 +10,7 @@ class SnakeGame {
         this.direction = 'right';
         this.score = 0;
         this.gameLoop = null;
-        this.gameSpeed = 150;
+        this.gameSpeed = 200;
 
         this.startButton = document.getElementById('startButton');
         this.scoreElement = document.getElementById('scoreValue');
@@ -21,7 +21,7 @@ class SnakeGame {
         // 新增属性
         this.isPaused = false;
         this.highScore = localStorage.getItem('snakeHighScore') || 0;
-        this.difficultySelect = document.getElementById('difficulty');
+        // this.difficultySelect = document.getElementById('difficulty');
         this.pauseButton = document.getElementById('pauseButton');
         this.highScoreElement = document.getElementById('highScoreValue');
         this.eatSound = document.getElementById('eatSound');
@@ -37,13 +37,13 @@ class SnakeGame {
         this.setupTouchControls();
         
         // 更新游戏速度
-        this.difficultySelect.addEventListener('change', () => {
-            this.gameSpeed = parseInt(this.difficultySelect.value);
-            if (this.gameLoop) {
-                clearInterval(this.gameLoop);
-                this.gameLoop = setInterval(() => this.gameStep(), this.gameSpeed);
-            }
-        });
+        // this.difficultySelect.addEventListener('change', () => {
+        //     this.gameSpeed = parseInt(this.difficultySelect.value);
+        //     if (this.gameLoop) {
+        //         clearInterval(this.gameLoop);
+        //         this.gameLoop = setInterval(() => this.gameStep(), this.gameSpeed);
+        //     }
+        // });
 
         // 添加蛇身花纹
         this.snakePattern = document.createElement('canvas');
@@ -101,7 +101,7 @@ class SnakeGame {
         if (this.gameLoop) clearInterval(this.gameLoop);
         this.gameLoop = setInterval(() => this.gameStep(), this.gameSpeed);
         this.startButton.textContent = '重新开始';
-        this.gameSpeed = parseInt(this.difficultySelect.value);
+        this.gameSpeed = 400;
         this.isPaused = false;
         this.pauseButton.textContent = '暂停';
     }
