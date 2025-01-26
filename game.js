@@ -1,5 +1,10 @@
 class SnakeGame {
     constructor() {
+        // window.addEventListener('resize', function() {
+        //     console.log('resize');
+        //     document.body.style.zoom = '100%';
+        // });
+        
         this.canvas = document.getElementById('gameCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.canvas.width = 400;
