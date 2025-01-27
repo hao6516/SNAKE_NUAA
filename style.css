@@ -24,6 +24,7 @@ body {
     position: relative;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
+    -webkit-appearance:none;
 }
 
 .title {
@@ -88,6 +89,7 @@ canvas {
     0%, 100% { transform: rotate(-5deg); }
     50% { transform: rotate(5deg); }
 }
+  
 
 button {
     background-color: var(--primary-red);
@@ -98,6 +100,8 @@ button {
     /* border-radius: 5px; */
     font-family: 'Ma Shan Zheng', cursive;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 button:hover {
