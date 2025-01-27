@@ -23,6 +23,7 @@ body {
     font-family: 'Ma Shan Zheng', cursive;
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .title {
