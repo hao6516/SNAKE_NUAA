@@ -288,7 +288,7 @@ class SnakeGame {
         };
     
         // 设置图片的源地址
-        eyeImage.src = './a3.png'; // 替换为你的图片路径
+        eyeImage.src = './snake_head.png'; // 替换为你的图片路径
     }
 
     drawFood() {
