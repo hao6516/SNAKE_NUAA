@@ -178,9 +178,9 @@ select {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-height: 770px) {
     body {
-        scale: 0.75;
+        scale: 0.85;
     }
 }
 
