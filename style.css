@@ -178,6 +178,13 @@ select {
     }
 }
 
+@media (max-width: 370px) {
+    body {
+        scale: 0.75;
+    }
+}
+
+
 /* 添加新年装饰元素 */
 /* .game-container::before,
 .game-container::after {
