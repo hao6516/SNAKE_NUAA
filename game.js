@@ -305,7 +305,7 @@ class SnakeGame {
             this.ctx.drawImage(foodImage, x, y, imageWidth, imageWidth);
             
         }
-        foodImage.src = './food.png'; // 替换为你的图片路径
+        foodImage.src = './snake_head.png'; // 替换为你的图片路径
 
         // 绘制糖果花纹
         // this.ctx.strokeStyle = '#ffd700';
