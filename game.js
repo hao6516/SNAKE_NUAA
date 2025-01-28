@@ -21,9 +21,9 @@ class SnakeGame {
 
         // 设置图片的源地址
         img.src = './a1.png'; //
-        this.canvas.width = 380;
-        this.canvas.height = 380;
-        this.gridSize = 20;
+        this.canvas.width = 390;
+        this.canvas.height = 390;
+        this.gridSize = 30;
         this.snake = [];
         this.food = {};
         this.direction = 'right';
@@ -261,57 +261,63 @@ class SnakeGame {
     }
 
     drawSnakeEyes(head) {
-        const eyeSize = 20;
+        const eyeSize = 30;
         const eyeOffset = 5;
-        const eyeImage = new Image(); // 创建一个图片对象
+        const headImage = new Image(); // 创建一个图片对象
     
         // 图片加载完成后绘制
-        eyeImage.onload = () => {
+        headImage.onload = () => {
             switch(this.direction) {
                 case 'right':
-                    this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
-                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize + this.gridSize, eyeSize, eyeSize);
+                    this.ctx.drawImage(headImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
+                    // this.ctx.drawImage(headImage, head.x * this.gridSize, head.y * this.gridSize + this.gridSize, eyeSize, eyeSize);
                     break;
                 case 'left':
-                    this.ctx.drawImage(eyeImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
-                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + 4, head.y * this.gridSize + this.gridSize - eyeOffset - eyeSize, eyeSize, eyeSize);
+                    this.ctx.drawImage(headImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
+                    // this.ctx.drawImage(headImage, head.x * this.gridSize + 4, head.y * this.gridSize + this.gridSize - eyeOffset - eyeSize, eyeSize, eyeSize);
                     break;
                 case 'up':
-                    this.ctx.drawImage(eyeImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
-                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 4, eyeSize, eyeSize);
+                    this.ctx.drawImage(headImage, head.x * this.gridSize, head.y * this.gridSize, eyeSize, eyeSize);
+                    // this.ctx.drawImage(headImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 4, eyeSize, eyeSize);
                     break;
                 case 'down':
-                    this.ctx.drawImage(eyeImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
-                    // this.ctx.drawImage(eyeImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 12, eyeSize, eyeSize);
+                    this.ctx.drawImage(headImage, head.x * this.gridSize , head.y * this.gridSize , eyeSize, eyeSize);
+                    // this.ctx.drawImage(headImage, head.x * this.gridSize + this.gridSize - eyeOffset - eyeSize, head.y * this.gridSize + 12, eyeSize, eyeSize);
                     break;
             }
         };
     
         // 设置图片的源地址
-        eyeImage.src = './snake_head.png'; // 替换为你的图片路径
+        headImage.src = './snake_head.png'; // 替换为你的图片路径
     }
 
     drawFood() {
         const x = this.food.x * this.gridSize;
         const y = this.food.y * this.gridSize;
-        
+        const imageWidth = 30
         // 绘制糖果包装
-        this.ctx.fillStyle = '#ff0000';
-        this.ctx.beginPath();
-        this.ctx.roundRect(x + 2, y + 2, this.gridSize - 4, this.gridSize - 4, 5);
-        this.ctx.fill();
-        
+        // this.ctx.fillStyle = '#ff0000';
+        // this.ctx.beginPath();
+        // this.ctx.roundRect(x + 2, y + 2, this.gridSize - 4, this.gridSize - 4, 5);
+        // this.ctx.fill();
+        const foodImage = new Image(); // 创建一个图片对象
+        foodImage.onload = () => {
+            this.ctx.drawImage(foodImage, x, y, imageWidth, imageWidth);
+            
+        }
+        foodImage.src = './food.png'; // 替换为你的图片路径
+
         // 绘制糖果花纹
-        this.ctx.strokeStyle = '#ffd700';
-        this.ctx.beginPath();
-        this.ctx.moveTo(x + 5, y + this.gridSize/2);
-        this.ctx.lineTo(x + this.gridSize - 5, y + this.gridSize/2);
-        this.ctx.stroke();
+        // this.ctx.strokeStyle = '#ffd700';
+        // this.ctx.beginPath();
+        // this.ctx.moveTo(x + 5, y + this.gridSize/2);
+        // this.ctx.lineTo(x + this.gridSize - 5, y + this.gridSize/2);
+        // this.ctx.stroke();
         
-        this.ctx.beginPath();
-        this.ctx.moveTo(x + this.gridSize/2, y + 5);
-        this.ctx.lineTo(x + this.gridSize/2, y + this.gridSize - 5);
-        this.ctx.stroke();
+        // this.ctx.beginPath();
+        // this.ctx.moveTo(x + this.gridSize/2, y + 5);
+        // this.ctx.lineTo(x + this.gridSize/2, y + this.gridSize - 5);
+        // this.ctx.stroke();
     }
 
     // 在吃到食物时播放音效
@@ -327,3 +333,4 @@ class SnakeGame {
 window.onload = () => {
     new SnakeGame();
 }; 
+
