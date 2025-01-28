@@ -178,9 +178,15 @@ select {
     }
 }
 
-@media (max-height: 770px) {
+/* @media (max-height: 770px) {
     body {
         scale: 0.9;
+    }
+} */
+@media (max-width: 380px) {
+    body {
+        scale: 0.8;
+        padding-bottom: 50px;
     }
 }
 
